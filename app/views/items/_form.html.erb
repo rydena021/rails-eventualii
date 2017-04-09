@@ -1,4 +1,4 @@
 <%= simple_form_for([@list, @list.items.build]) do |f| %>
     <%= f.input :task, label: false, placeholder: "New task ..." %>
-    <%= f.button :submit, "Add to List" %>
+    <%= f.submit "Add to List" %>
 <% end %>

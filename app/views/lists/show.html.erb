@@ -15,17 +15,17 @@
       <br><br>
       <table class="table bg-info">
         <thead>
-          <tr>
-            <th>Task</th>
-            <th></th>
-            <th></th>
-          </tr>
+
         </thead>
         <tbody>
           <%= render @list.items %>
+          <tr>
+            <td>
+            <%= render "items/form" %>
+            </td>
+          </tr>
         </tbody>
       </table>
-      <%= render "items/form" %>
     </div>
   </div>
 </div>
