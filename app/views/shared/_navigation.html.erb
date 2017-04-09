@@ -7,20 +7,24 @@
                 <a href="#top" onclick=$("#menu-close").click();>Eventualii</a>
             </li>
             <li>
-              <%= link_to "#top" do %>
-                <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
-              <% end %>
+                <a href="#top" onclick=$("#menu-close").click();>Home</a>
             </li>
             <li>
                 <a href="#about" onclick=$("#menu-close").click();>About</a>
             </li>
+            <% if user_signed_in? %>
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <%= t(".sign_out", default: "Log out") %>
               <% end %>
             </li>
+            <% else %>
             <li>
-              <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+              <%= link_to t(".sign_in", default: "Login"), new_user_session_path%>
             </li>
+            <li>
+              <%= link_to t(".sign_up", default: "Sign Up"), new_user_registration_path %>
+            </li>
+            <% end %>
         </ul>
     </nav>
