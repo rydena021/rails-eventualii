@@ -1,12 +1,12 @@
 <tr>
 <% if item.completed? %>
-  <td class="col-md-10" style="opacity:0.3;"><strike><%= item.task %></strike></td>
+  <td class="text-editable col-md-10" style="opacity:0.3;"><strike><%= item.task %></strike></td>
   <td class="col-md-1">
     <%= link_to complete_list_item_path(@list, item.id), method: :patch do %>
         <i class="fa fa-undo fa-2x" aria-hidden="true"></i>
     <% end %>
 <% else %>
-  <td class="col-md-10"><%= item.task %></td>
+  <td class="text-editable col-md-10"><%= item.task %></td>
   <td class="col-md-1">
     <%= link_to complete_list_item_path(@list, item.id), method: :patch do %>
         <i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i>
