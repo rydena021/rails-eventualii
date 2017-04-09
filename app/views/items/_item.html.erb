@@ -1,0 +1,9 @@
+<tr>
+<% if item.completed? %>
+  <td><strike><%= item.task %></strike></td>
+<% else %>
+  <td><%= item.task %></td>
+  <td><%= link_to 'Mark Done', complete_list_item_path(@list, item.id), method: :patch %></td>
+<% end %>
+  <td><%= link_to 'Delete', list_item_path(@list, item.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
