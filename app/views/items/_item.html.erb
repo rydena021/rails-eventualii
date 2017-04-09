@@ -1,9 +1,21 @@
 <tr>
 <% if item.completed? %>
-  <td><strike><%= item.task %></strike></td>
+  <td class="col-md-10" style="opacity:0.3;"><strike><%= item.task %></strike></td>
+  <td class="col-md-1">
+    <%= link_to complete_list_item_path(@list, item.id), method: :patch do %>
+        <i class="fa fa-undo fa-2x" aria-hidden="true"></i>
+    <% end %>
 <% else %>
-  <td><%= item.task %></td>
-  <td><%= link_to 'Mark Done', complete_list_item_path(@list, item.id), method: :patch %></td>
+  <td class="col-md-10"><%= item.task %></td>
+  <td class="col-md-1">
+    <%= link_to complete_list_item_path(@list, item.id), method: :patch do %>
+        <i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i>
+    <% end %>
+  </td>
 <% end %>
-  <td><%= link_to 'Delete', list_item_path(@list, item.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <td class="col-md-1">
+    <%= link_to list_item_path(@list, item.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <i class="fa fa-trash-o fa-2x" aria-hidden="true"></i>
+    <% end %>
+  </td>
 </tr>

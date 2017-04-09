@@ -1,14 +1,38 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <h1>Lists</h1>
-      <ul>
-        <% current_user.lists.each do |list| %>
-          <li><%= link_to list.title, list %></li>
-        <% end %>
-      </ul>
-      <br>
-      <%= link_to t(".top_call_to_action", default: "New List"), new_list_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+<aside id="top" class="list-index">
+    <div class="text-vertical-center">
+        <h1>Eventualii</h1>
     </div>
-  </div>
-</div>
+</aside>
+<section id="services" class="services">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-lg-10 col-lg-offset-1">
+                <h2>My Lists</h2>
+                <hr class="small">
+
+                <div class="row">
+                  <% current_user.lists.each do |list| %>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="service-item">
+                          <%= link_to list do %>
+                            <span class="fa-stack fa-4x">
+                            <i class="fa fa-list text-primary"></i>
+                            </span>
+                            <h3><strong><%= list.title %></strong></h3>
+                          <% end %>
+                        </div>
+                    </div>
+                    <% end %>
+                </div>
+                <!-- /.row (nested) -->
+                <div class="row">
+                                  <br>
+                <%= link_to "New List", new_list_path, class: "btn btn-lg btn-primary" %>
+                </div>
+            </div>
+            <!-- /.col-lg-10 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>

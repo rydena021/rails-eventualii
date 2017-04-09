@@ -8,6 +8,6 @@ Rails.application.routes.draw do
       end
     end
   end
-
+  get '/demo', to: 'pages#demo', as: 'demo'
   root to: 'pages#home'
 end

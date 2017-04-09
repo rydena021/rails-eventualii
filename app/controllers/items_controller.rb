@@ -23,7 +23,7 @@ class ItemsController < ApplicationController
   private
 
   def set_list
-    @list = List.friendly.find(params[:id])
+    @list = List.friendly.find(params[:list_id])
   end
 
   # def set_item

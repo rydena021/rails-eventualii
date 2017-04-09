@@ -197,6 +197,32 @@ hr.small {
     -o-background-size: cover;
 }
 
+
+
+.list-show {
+    display: table;
+    width: 100%;
+    height: 400px;
+    color: #fff;
+    background: image-url("woman-papers") no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.list-index {
+    display: table;
+    width: 100%;
+    height: 400px;
+    color: #fff;
+    background: image-url("man-desk") no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
 /* Portfolio */
 
 .portfolio {
