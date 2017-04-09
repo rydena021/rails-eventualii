@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :items do
       member do
         patch :complete
+        patch :undo
       end
     end
   end

@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_list, only: [:create, :destroy, :complete]
+  before_action :set_list, only: [:create, :destroy, :complete, :undo]
   # before_action :set_item, except: [:create]
 
 
@@ -17,6 +17,12 @@ class ItemsController < ApplicationController
   def complete
     @item = @list.items.find(params[:id])
     @item.update_attribute(:completed, true)
+    redirect_to @list
+  end
+
+  def undo
+    @item = @list.items.find(params[:id])
+    @item.update_attribute(:completed, false)
     redirect_to @list
   end
 
